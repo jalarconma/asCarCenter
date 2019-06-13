@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+
+include 'example-application'
+include 'example-data'
+include 'example-frontend'
