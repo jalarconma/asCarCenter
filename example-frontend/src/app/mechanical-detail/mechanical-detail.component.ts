@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MechanicalApiService } from '../shared/mechanical-api.service';
 
 @Component({
 	selector: 'app-mechanical-detail',
@@ -11,13 +12,16 @@ export class MechanicalDetailComponent implements OnInit {
 
 	documentTypes = ['CC', 'CE', 'DI', 'PA', 'CN', 'RC']
 
-	constructor() { }
+	constructor(private mechApi: MechanicalApiService) { }
 
 	ngOnInit() {
 	}
 
-	onSubmit() {
-
+	onSubmit(): void {
+		this.mechApi.create(this.mechanical).subscribe((data: number) => {
+			this.mechanical = {};
+			window.alert("Mecánico creado exitosamente");
+		});
 	}
 
 }

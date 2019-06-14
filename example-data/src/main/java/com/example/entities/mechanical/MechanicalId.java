@@ -17,6 +17,9 @@ public class MechanicalId implements Serializable {
     @Column(name = "DOCUMENTO")
     private Integer documentNumber;
 
+	public MechanicalId() {
+	}
+
 	public MechanicalId(String documentType, Integer documentNumber) {
 		this.documentType = documentType;
 		this.documentNumber = documentNumber;
