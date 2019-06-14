@@ -27,11 +27,11 @@ public abstract class BaseEntity implements Serializable {
 	
 	private static final long serialVersionUID = -2934393616988057345L;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = true, updatable = false)
     @CreatedDate
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", nullable = true)
     @LastModifiedDate
     private LocalDateTime updatedAt;
 

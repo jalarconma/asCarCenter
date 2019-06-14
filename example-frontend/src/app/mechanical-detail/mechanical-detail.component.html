@@ -1,0 +1,84 @@
+<div class="row p-3">
+	<div class="col-lg">
+		<form (ngSubmit)="onSubmit()" #mechanicalForm="ngForm">
+			<div class="form-group">
+				<label for="mechDocumentType">Tipo de Documento</label>
+				<select [(ngModel)]="mechanical.documentType" class="form-control" id="mechDocumentType"
+					name="mechDocumentType" required #mechDocumentType="ngModel">
+					<option *ngFor="let docType of documentTypes" [value]="docType">
+						{{docType}}
+					</option>
+				</select>
+				<div [hidden]="mechDocumentType.valid" class="alert alert-danger">
+					Tipo de Documento es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechDocumentNumber"># de documento</label>
+				<input #mechDocumentNumber="ngModel" type="number" class="form-control" id="mechDocumentNumber" required
+					[(ngModel)]="mechanical.documentNumber" name="mechDocumentNumber">
+				<div [hidden]="mechDocumentNumber.valid" class="alert alert-danger">
+					El # de documento es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechName">Primer Nombre</label>
+				<input #mechName="ngModel" type="text" class="form-control" id="mechName" required
+					[(ngModel)]="mechanical.firstName" name="mechName">
+				<div [hidden]="mechName.valid" class="alert alert-danger">
+					El nombre es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechSecondName">Segundo Nombre</label>
+				<input #mechSecondName="ngModel" type="text" class="form-control" id="mechSecondName"
+					[(ngModel)]="mechanical.secondName" name="mechSecondName">
+				<div [hidden]="mechSecondName.valid" class="alert alert-danger">
+					El segundo nombre es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechFirstLastName">Primer Apellido</label>
+				<input #mechFirstLastName="ngModel" type="text" class="form-control" id="mechFirstLastName" required
+					[(ngModel)]="mechanical.firstLastName" name="mechFirstLastName">
+				<div [hidden]="mechFirstLastName.valid" class="alert alert-danger">
+					El primer apellido es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechSecondLastName">Segundo Apellido</label>
+				<input #mechSecondLastName="ngModel" type="text" class="form-control" id="mechSecondLastName"
+					[(ngModel)]="mechanical.secondLastName" name="mechSecondLastName">
+				<div [hidden]="mechSecondLastName.valid" class="alert alert-danger">
+					El segundo apellido es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechAddress">Dirección</label>
+				<input required #mechAddress="ngModel" type="text" class="form-control" id="mechAddress"
+					[(ngModel)]="mechanical.address" name="mechAddress">
+				<div [hidden]="mechAddress.valid" class="alert alert-danger">
+					La dirección es obligatoria
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechEmail">Email</label>
+				<input required #mechEmail="ngModel" pattern=".+@.+" type="email" class="form-control" id="mechEmail"
+					[(ngModel)]="mechanical.email" name="mechEmail">
+				<div [hidden]="mechEmail.valid" class="alert alert-danger">
+					El email es obligatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="mechCellphone">Celular</label>
+				<input required #mechCellphone="ngModel" type="text" class="form-control" id="mechCellphone"
+					[(ngModel)]="mechanical.cellphone" name="mechCellphone">
+				<div [hidden]="mechCellphone.valid" class="alert alert-danger">
+					El celular es obligatorio
+				</div>
+			</div>
+			<button [disabled]="!mechanicalForm.form.valid" type="submit"
+				class="btn btn-primary float-right">Crear</button>
+		</form>
+	</div>
+</div>

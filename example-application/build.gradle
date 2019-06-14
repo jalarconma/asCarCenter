@@ -32,7 +32,7 @@ dependencies {
     
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
     
-    //implementation project(':example-data')
+    implementation project(':example-data')
     
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
