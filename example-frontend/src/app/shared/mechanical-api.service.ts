@@ -11,6 +11,14 @@ export class MechanicalApiService {
 
 	constructor(private http: HttpClient, private config: ServerConfig) { }
 
+	findByPriority(): Observable<[]> {
+		return this.http.get<[]>(this.config.apiURL + '/mechanical/by-priority')
+			.pipe(
+				retry(1),
+				catchError(this.config.handleError)
+			)
+	}
+
 	create(mech): Observable<number> {
 		return this.http.post<number>(this.config.apiURL + '/mechanical', JSON.stringify(mech), this.config.httpOptions)
 			.pipe(

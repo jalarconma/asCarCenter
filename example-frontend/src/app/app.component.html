@@ -1,16 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-    <h1>
-        Bienvenido a {{ title }}!
-    </h1>
+	<h1>
+		Bienvenido a {{ title }}!
+	</h1>
 </div>
 <div>
-    <tabset>
-        <tab>
-            <ng-template tabHeading>
-                <a class="routing_link" [routerLink]="['/mechanical-create']">Crear Mecánico</a>
-            </ng-template>
-        </tab>
-    </tabset>
+	<tabset>
+		<tab>
+			<ng-template tabHeading>
+				<a class="routing_link" [routerLink]="['/mechanical-create']">Crear Mecánico</a>
+			</ng-template>
+		</tab>
+		<tab>
+			<ng-template tabHeading>
+				<a class="routing_link" [routerLink]="['/mechanical-assign']">Asignar Mecánico</a>
+			</ng-template>
+		</tab>
+	</tabset>
 </div>
 <router-outlet></router-outlet>

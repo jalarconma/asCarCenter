@@ -9,11 +9,13 @@ import { MechanicalDetailComponent } from './mechanical-detail/mechanical-detail
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ServerConfig } from './shared/serverConfig';
+import { MechanicalAssignComponent } from './mechanical-assign/mechanical-assign.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MechanicalDetailComponent
+    MechanicalDetailComponent,
+    MechanicalAssignComponent
   ],
   imports: [
     BrowserModule,
